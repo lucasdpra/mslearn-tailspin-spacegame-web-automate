@@ -95,6 +95,9 @@ stages:
 
         # Get the App Service name for the dev environment.
         WebAppNameDev=$(terraform output appservice_name_dev)
+        temp="${WebAppNameDev%\"}"
+        temp="${temp#\"}"
+        WebAppNameDev=$temp
         echo $WebAppNameDev
 
         # Write the WebAppNameDev variable to the pipeline.
