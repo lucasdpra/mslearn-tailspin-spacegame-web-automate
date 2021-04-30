@@ -57,11 +57,6 @@ resource "azurerm_app_service" "spacegame_dev" {
   location            = azurerm_resource_group.spacegame.location
   resource_group_name = azurerm_resource_group.spacegame.name
   app_service_plan_id = azurerm_app_service_plan.spacegame.id
-
-  site_config {
-    linux_fx_version = "DOTNETCORE|3.1"
-    app_command_line = "dotnet Tailspin.SpaceGame.Web.dll"
-  }
 }
 
 output "appservice_name_dev" {
